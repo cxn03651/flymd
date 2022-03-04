@@ -33,7 +33,7 @@ function getNewContent()
 function insertGFMContent()
 {
     jQuery.get(markdownFilename, undefined,
-               "<h1>Hello, World!</h1>"
+               "<h1>Hello, World!</h1>",
         //        function(data) {
 
         // $.ajax({
