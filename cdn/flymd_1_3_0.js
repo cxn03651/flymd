@@ -42,12 +42,13 @@ function insertGFMContent()
             data: data,
             contentType: "text/plain",
             success: function(data){
-                $( "#replacer" ).html(data.replace(pointIdentifier, pointHtmlIdentifier));
-                if (autoScroll)
-                    scrollToMaker();
-                $("#flymd-marker").html("");
-                $(".flymd-static #GFMize").css("color", "#00cc44");
-            }, 
+                // $( "#replacer" ).html(data.replace(pointIdentifier, pointHtmlIdentifier));
+                // if (autoScroll)
+                //     scrollToMaker();
+                // $("#flymd-marker").html("");
+                // $(".flymd-static #GFMize").css("color", "#00cc44");
+                console.log(data);
+            },
             error: function(jqXHR, textStatus, error){
                 console.log(jqXHR, textStatus, error);
             }
@@ -75,9 +76,9 @@ function insertMathJaxContent()
         $("#flymd-marker").html("");
 
         $(".flymd-static #MathJaxize").css("color", "#00cc44");
-        
+
         MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-        
+
     }, "html");
 }
 
@@ -104,7 +105,7 @@ function scrollToMaker()
 }
 
 $(document).ready(function() {
-    
+
     $('.flymd-static #AutoRefresh').click(function()
                          {
                              autoRefresh = !autoRefresh;
@@ -112,7 +113,7 @@ $(document).ready(function() {
                                  $(".flymd-static #AutoRefresh").css("color", "#00cc44"):
                                  $(".flymd-static #AutoRefresh").css("color", "#ff4d4d");
                          });
-    
+
 
     $('.flymd-static #AutoScroll').click(function()
                                          {
@@ -129,7 +130,7 @@ $(document).ready(function() {
                                               $(".flymd-static #GFMmode").css("color", "#00cc44"):
                                               $(".flymd-static #GFMmode").css("color", "#ff4d4d");
                                       });
-    
+
     $('.flymd-static #GFMize').click(function()
                                      {
                                          autoRefresh = false;
@@ -145,7 +146,7 @@ $(document).ready(function() {
                                          $(".flymd-static #GFMize").css("color", "#737373");
                                          insertMathJaxContent();
                                      });
-    
+
     getNewContent();
     refresh();
 });
