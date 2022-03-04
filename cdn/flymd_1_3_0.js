@@ -32,28 +32,31 @@ function getNewContent()
 
 function insertGFMContent()
 {
-    jQuery.get(markdownFilename, undefined, function(data) {
+    jQuery.get(markdownFilename, undefined,
+               "<h1>Hello, World!</h1>"
+        //        function(data) {
 
-        $.ajax({
-            type: "POST",
-            dataType: "html",
-            processData: false,
-            url: "https://api.github.com/markdown/raw",
-            data: data,
-            contentType: "text/plain",
-            success: function(data){
-                // $( "#replacer" ).html(data.replace(pointIdentifier, pointHtmlIdentifier));
-                // if (autoScroll)
-                //     scrollToMaker();
-                // $("#flymd-marker").html("");
-                // $(".flymd-static #GFMize").css("color", "#00cc44");
-                console.log(data);
-            },
-            error: function(jqXHR, textStatus, error){
-                console.log(jqXHR, textStatus, error);
-            }
-        });
-    }, "html");
+        // $.ajax({
+        //     type: "POST",
+        //     dataType: "html",
+        //     processData: false,
+        //     url: "https://api.github.com/markdown/raw",
+        //     data: data,
+        //     contentType: "text/plain",
+        //     success: function(data){
+        //         // $( "#replacer" ).html(data.replace(pointIdentifier, pointHtmlIdentifier));
+        //         // if (autoScroll)
+        //         //     scrollToMaker();
+        //         // $("#flymd-marker").html("");
+        //         // $(".flymd-static #GFMize").css("color", "#00cc44");
+        //         console.log(data);
+        //     },
+        //     error: function(jqXHR, textStatus, error){
+        //         console.log(jqXHR, textStatus, error);
+        //     }
+        // });
+        //        },
+               "html");
 }
 
 function insertMathJaxContent()
